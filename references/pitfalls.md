@@ -22,8 +22,8 @@
 
 ## ⚠ 3. ts.net 地址的端口与 Origin 陷阱（2026-08-23 事故）
 
-- `https://marcomac-mini.taildfba33.ts.net` **不带 ：8443** → 证书对不上（443 被 tls-proxy 的 dsh 证书占着）。
-- 网关 Origin 白名单必须有**带端口**的版本 `https://marcomac-mini.taildfba33.ts.net:8443`，
+- `https://<mini-hostname>.<tailnet>.ts.net` **不带 ：8443** → 证书对不上（443 被 tls-proxy 的 dsh 证书占着）。
+- 网关 Origin 白名单必须有**带端口**的版本 `https://<mini-hostname>.<tailnet>.ts.net:8443`，
   缺了 = 能登录但会话历史空白（WebSocket 403）。
 - 不要把 makke.net 加进 Tailscale Split DNS；不要开"Override local DNS"；Tailscale Funnel 之前占过 443，已移走别复活。
 

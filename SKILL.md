@@ -16,7 +16,7 @@ mini（192.168.31.12）上的 DSH web 只监听 `127.0.0.1:3080`（**官方安�
 | 在家 · MacBook Air | `https://dsh.makke.net` | ~60ms | 自动（home-split-dns agent 每 45s 切 DNS） |
 | 在家 · iPad / iPhone | `https://dsh.makke.net` | ~21ms | **手动两步**：Wi-Fi DNS=`192.168.31.12` ＋ 关 iCloud 私人代理 |
 | 在家 · 其它 Mac | `https://dsh.makke.net` | ~21ms | 手动设 DNS 同上 |
-| 出门 · 有 Tailscale | `https://marcomac-mini.taildfba33.ts.net:8443` | 快 | **必须带 :8443**；Tailscale 本身不稳，别当唯一路径 |
+| 出门 · 有 Tailscale | `https://<mini-hostname>.<tailnet>.ts.net:8443` | 快 | **必须带 :8443**；Tailscale 本身不稳，别当唯一路径 |
 | 出门 · 没有 Tailscale | `https://dsh.makke.net` | 0.7–2s | CF Tunnel 兜底，慢是物理性的，别试图优化 |
 | 出门 · Mac 控制端 | UU Remote 端口映射 → mini 3080 | 最快 | **iOS 的 UU 没有端口映射功能** |
 

@@ -20,14 +20,14 @@
 【出门 · 公网兜底】
   https://dsh.makke.net
     → 运营商 DNS → Cloudflare anycast（免费版无国内节点）
-    → CF Access 邮箱 OTP（theorangee@gmail.com，双层认证的外层，实测 302 跳转）
+    → CF Access 邮箱 OTP（<owner@example.com>，双层认证的外层，实测 302 跳转）
     → CF Tunnel (cloudflared --protocol quic, com.marco.cloudflared)
     → 127.0.0.1:8080 同一个 auth-gateway（内层 Basic） → 3080
     实测 TTFB 0.7–2s；edge RTT ~385ms / 丢包 50%（2026-08-29 实测）
     ⚠ 慢是物理性的：应用层无解，只能换路径
 
 【出门 · Tailscale 备用】
-  https://marcomac-mini.taildfba33.ts.net:8443 （必须带 :8443）
+  https://<mini-hostname>.<tailnet>.ts.net:8443 （必须带 :8443）
     → Tailscale Serve → mini
     ⚠ Tailscale 本身不稳定：controlplane.tailscale.com 被 SNI 阻断后守护进程会挂
       → 重启 Tailscale App 恢复。不要当唯一路径
